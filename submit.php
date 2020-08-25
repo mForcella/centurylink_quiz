@@ -2,13 +2,10 @@
 <body>
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "ecollective";
+include_once('db_config.php');
 
 // create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($db_config['servername'], $db_config['username'], $db_config['password'], $db_config['dbname']);
 
 // check connection
 if ($conn->connect_error) {
