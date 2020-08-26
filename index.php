@@ -6,13 +6,24 @@
 <title>CenturyLink Quiz</title>
 
 <!-- Begin CSS -->
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 	body {
 	    overflow: hidden;
 	}
-	label {
+	button {
 		margin-left: 10px;
+	}
+	.btn-response:focus, .selected, .selected:hover {
+		outline: none;
+		background-color: green;
+	}
+	.incorrect, .incorrect:hover {
+		background-color: red;
+	}
+	.btn-response {
+		width: 150px;
+		margin: 10px;
 	}
 	.screen {
 		position: absolute;
@@ -41,16 +52,20 @@
 		<div class="screen secondary-screen" id="screen_2">
 			<h3>How many global miles of fiber does CenturyLink have across its network?</h3>
 			<div>
-				<input type="radio" name="question_1" id="answer_1a" value="a"><label for="answer_1a">50,000</label>
+				<input type="radio" name="1" value="a" hidden>
+				<button id="1a" class="btn btn-primary btn-response btn_1" onclick="select('1','a')">50,000 <span id="span_1a" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_1" id="answer_1b" value="b"><label for="answer_1b">100,000</label>
+				<input type="radio" name="1" value="b" hidden>
+				<button id="1b" class="btn btn-primary btn-response btn_1" onclick="select('1','b')">100,000 <span id="span_1b" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_1" id="answer_1c" value="c"><label for="answer_1c">250,000</label>
+				<input type="radio" name="1" value="c" hidden>
+				<button id="1c" class="btn btn-primary btn-response btn_1" onclick="select('1','c')">250,000 <span id="span_1c" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_1" id="answer_1d" value="d"><label for="answer_1d">450,000</label>
+				<input type="radio" name="1" value="d" hidden>
+				<button id="1d" class="btn btn-primary btn-response btn_1" onclick="select('1','d')">450,000 <span id="span_1d" class="glyphicon"></span></button>
 			</div>
 			<button class="btn btn-primary pull-right" id="question_1" onclick="submitAnswer('1')" disabled>Submit Answer</button>
 			<div class="hide-low" id="answer_1">
@@ -62,16 +77,20 @@
 		<div class="screen secondary-screen" id="screen_3">
 			<h3>How many cybersecurity threats are monitored daily on CenturyLink's network?</h3>
 			<div>
-				<input type="radio" name="question_2" id="answer_2a" value="a"><label for="answer_2a">570,000</label>
+				<input type="radio" name="2" value="a" hidden>
+				<button id="2a" class="btn btn-primary btn-response btn_2" onclick="select('2','a')">570,000 <span id="span_2a" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_2" id="answer_2b" value="b"><label for="answer_2b">1.4 million</label>
+				<input type="radio" name="2" value="b" hidden>
+				<button id="2b" class="btn btn-primary btn-response btn_2" onclick="select('2','b')">1.4 million <span id="span_2b" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_2" id="answer_2c" value="c"><label for="answer_2c">2.1 million</label>
+				<input type="radio" name="2" value="c" hidden>
+				<button id="2c" class="btn btn-primary btn-response btn_2" onclick="select('2','c')">2.1 million <span id="span_2c" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_2" id="answer_2d" value="d"><label for="answer_2d">3.6 million</label>
+				<input type="radio" name="2" value="d" hidden>
+				<button id="2d" class="btn btn-primary btn-response btn_2" onclick="select('2','d')">3.6 million <span id="span_2d" class="glyphicon"></span></button>
 			</div>
 			<button class="btn btn-primary pull-right" id="question_2" onclick="submitAnswer('2')" disabled>Submit Answer</button>
 			<div class="hide-low" id="answer_2">
@@ -83,10 +102,12 @@
 		<div class="screen secondary-screen" id="screen_4">
 			<h3>True or False? CenturyLink is investing heavily in enhancements to the customer experience with simpler products, more automation and faster delivery.</h3>
 			<div>
-				<input type="radio" name="question_3" id="answer_3a" value="true"><label for="answer_3a">True</label>
+				<input type="radio" name="3" value="a" hidden>
+				<button id="3a" class="btn btn-primary btn-response btn_3" onclick="select('3','a')">True <span id="span_3a" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_3" id="answer_3b" value="false"><label for="answer_3b">False</label>
+				<input type="radio" name="3" value="b" hidden>
+				<button id="3b" class="btn btn-primary btn-response btn_3" onclick="select('3','b')">False <span id="span_3b" class="glyphicon"></span></button>
 			</div>
 			<button class="btn btn-primary pull-right" id="question_3" onclick="submitAnswer('3')" disabled>Submit Answer</button>
 			<div class="hide-low" id="answer_3">
@@ -98,10 +119,12 @@
 		<div class="screen secondary-screen" id="screen_5">
 			<h3>True or False? CenturyLink Channel Partners have access to a variety of sales and marketing tools to go to market and drive demand, including our co-marketing automation tool delivered via Aprimo.</h3>
 			<div>
-				<input type="radio" name="question_4" id="answer_4a" value="true"><label for="answer_4a">True</label>
+				<input type="radio" name="4" value="a" hidden>
+				<button id="4a" class="btn btn-primary btn-response btn_4" onclick="select('4','a')">True <span id="span_4a" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_4" id="answer_4b" value="false"><label for="answer_4b">False</label>
+				<input type="radio" name="4" value="b" hidden>
+				<button id="4b" class="btn btn-primary btn-response btn_4" onclick="select('4','b')">False <span id="span_4b" class="glyphicon"></span></button>
 			</div>
 			<button class="btn btn-primary pull-right" id="question_4" onclick="submitAnswer('4')" disabled>Submit Answer</button>
 			<div class="hide-low" id="answer_4">
@@ -113,10 +136,12 @@
 		<div class="screen secondary-screen" id="screen_6">
 			<h3>True or False? CenturyLink's Partner Incentives are stackable, and a Partner can earn multiple payouts on one opportunity.</h3>
 			<div>
-				<input type="radio" name="question_5" id="answer_5a" value="true"><label for="answer_5a">True</label>
+				<input type="radio" name="5" value="a" hidden>
+				<button id="5a" class="btn btn-primary btn-response btn_5" onclick="select('5','a')">True <span id="span_5a" class="glyphicon"></span></button>
 			</div>
 			<div>
-				<input type="radio" name="question_5" id="answer_5b" value="false"><label for="answer_5b">False</label>
+				<input type="radio" name="5" value="b" hidden>
+				<button id="5b" class="btn btn-primary btn-response btn_5" onclick="select('5','b')">False <span id="span_5b" class="glyphicon"></span></button>
 			</div>
 			<button class="btn btn-primary pull-right" id="question_5" onclick="submitAnswer('5')" disabled>Submit Answer</button>
 			<div class="hide-low" id="answer_5">
@@ -155,27 +180,46 @@
 		var correct = 0;
 		var bonus = 0;
 
-		$('input').change(function() {
-			$("#"+$(this).attr('name')).removeAttr('disabled');
-		});
+		// response button click
+		function select(group, value) {
+			// select radio input
+			$('input[name="' + group+ '"]').val([value]);
+			// highlight button
+			$(".btn_"+group).removeClass('selected');
+			$("#"+group+value).addClass('selected');
+			// enable submit button
+			$("#question_"+group).removeAttr('disabled');
+		}
 
+		// shift the current view off screen, shift next view onto screen
 		function changeScreen(current, next) {
 			$("#screen_"+current).animate({ left: '-150%' }, 750 );
             $("#screen_"+next).animate({ left: '50%' }, 750 ).show();
 		}
 
+		// submit user response
 		function submitAnswer(id) {
-			var answers = ['d', 'd', 'true', 'true', 'true'];
-			// check response
-			var response = $('input[name="question_'+id+'"]:checked').val();
+			var answers = ['d', 'd', 'a', 'a', 'a'];
+			// check user response
+			var response = $('input[name="'+id+'"]:checked').val();
 			var answer = answers[id-1];
 			if (response == answer) {
-				console.log("correct!");
 				correct += 1;
+				$("#span_"+id+response).addClass("glyphicon-ok");
 			} else {
-				console.log("incorrect!");
+				$("#span_"+id+response).addClass("glyphicon-remove");
+				$("#"+id+response).addClass("incorrect");
+				// reveal correct answer
+				$("#"+id+answer).addClass("selected");
+				$("#span_"+id+answer).addClass("glyphicon-ok");
 			}
-			// slide up answer
+			// disable button group clicking
+			$(".btn_"+id).prop("onclick", null).off("click");
+			$(".btn_"+id).on("mousedown", function(e) {
+				e.preventDefault();
+				return false;
+			});
+			// fade out submit button, slide up answer
 			$("#question_"+id).fadeOut();
 			$("#answer_"+id).animate({ marginTop: '0' }, 500 );
 			// check for end of quiz
