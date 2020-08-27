@@ -10,9 +10,25 @@
 <style type="text/css">
 	body {
 	    overflow: hidden;
+	    color: white;
+	}
+	.container {
+	    background-color: black;
+	    height: 100vh;
+	    width: 95%;
 	}
 	button {
 		margin-left: 10px;
+		border-radius: 0 !important;
+		background-color: #0D49B5 !important;
+		transition: all 0.3s ease;
+		font-size: 16px !important;
+		padding: 10px !important;
+		margin: 3px !important;
+	}
+	a, a:hover {
+		color: #3AD69C;
+		text-decoration: none;
 	}
 	.btn-response:focus, .selected, .selected:hover {
 		outline: none;
@@ -38,15 +54,103 @@
 	.hide-low {
 		margin-top: 1000px;
 	}
+	.intro {
+		text-transform: uppercase;
+		color: #3AD69C;
+	}
+	.fine-print {
+		font-size: 10px;
+	}
+	.bordered {
+		border-top: 1px solid #46484D;
+		border-bottom: 1px solid #46484D;
+		text-align: center;
+		font-size: 12px;
+		padding: 10px 0;
+		margin: 30px 0;
+	}
+	.top-bar > div {
+		height: 5px;
+		margin-bottom: 20px;
+	}
+	.bar-1 {
+		background-color: #02205f;
+	}
+	.bar-2 {
+		background-color: #0D49B5;
+	}
+	.bar-3 {
+		background-color: #3AD69C;
+	}
+	.gray {
+		color: #777;
+	}
+	.quiz-btn {
+		width: 150px;
+	}
+	.quiz-btn:hover {
+		width: 156px;
+		padding: 13px !important;
+		margin: 0 !important;
+	}
+	.logo {
+		margin: 10px 140px;
+	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+		height: 50px;
+		background-color: #0D49B5; 
+		width: 95vw;
+		padding: 15px;
+		margin-left: -15px;
+		text-align: center;
+	}
 </style>
 </head>
 <!-- End CSS -->
 
 <body>
 	<div class="container">
+		<!-- Top color bar, logo, and footer -->
+		<div class="top-bar row">
+			<div class="col-xs-2 bar-1"></div>
+			<div class="col-xs-4 bar-2"></div>
+			<div class="col-xs-6 bar-3"></div>
+		</div>
+		<div class="logo">
+			<img src="assets/image/logo_century_link.png">
+		</div>
+		<div class="footer">
+			Want to learn more? Email us now
+		</div>
+		<!-- Welcome screen -->
 		<div class="screen" id="screen_1">
-			<h2>Click the button below to start the quiz</h2>
-			<button class="btn btn-primary pull-right" onclick="changeScreen(1,2)">Start Quiz</button>
+			<p class="intro">It's all about your network</p>
+			<h2 class="">Do you call yourself a techie?<br>Let's see what you know!</h2>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-7">
+					<p>
+						Test your tech knowledge by answering five "simple"
+						questions. Earn a prize selection based on your total number
+						of correct answers. In addition, answer all five correctly and
+						you'll be entered into a drawing for a flat screen TV!
+					</p>
+					<p class="fine-print">
+						No purchase necessary to enter or win. Void where prohibited. Up to 2 entries per individual. Must
+						be 18 years of age to enter. Entry period begins 09/08/20 at 11:00 a.m. EDT and ends on 09/10/20
+						at 2:00 p.m. EDT. <a href="www.centurylink.com/xxx">For complete rules see www.centurylink.com/xxx</a>
+					</p>
+					<button class="btn btn-primary pull-right quiz-btn" onclick="changeScreen(1,2)">Quiz Me!</button>
+				</div>
+			</div>
+			<div class="row bordered">
+				Our Channel Partners help drive our success. <a href="">Join the CenturyLink Channel Parner Program ›</a>
+			</div>
+			<div class="row fine-print">
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+			</div>
 		</div>
 		<!-- Question 1 -->
 		<div class="screen secondary-screen" id="screen_2">
@@ -178,7 +282,6 @@
 	<script type="text/javascript">
 
 		var correct = 0;
-		var bonus = 0;
 
 		// response button click
 		function select(group, value) {
