@@ -9,7 +9,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 	body {
-	    overflow: hidden;
+	    overflow-x: hidden;
 	    color: white;
 	}
 	button {
@@ -40,14 +40,17 @@
 
 	/* color bar, footer, logo */
 	.logo {
-		margin: 10px 140px;
+		margin: 10px 20%;
+	}
+	.logo > img {
+		width: 150px;
 	}
 	.footer {
 		position: fixed;
 		bottom: 0;
 		height: 50px;
 		background-color: #0D49B5; 
-		width: 95vw;
+		width: 95%;
 		padding: 15px;
 		margin-left: -15px;
 		text-align: center;
@@ -179,13 +182,31 @@
 		margin-top: 27px;
 	}
 
+	/* bonus question */
+	.bonus-header {
+		background-color: #3AD69C !important;
+		color: black;
+		padding: 10px;
+	}
+	.bonus-main {
+		background-color: white !important;
+		color: black;
+		padding: 50px;
+	}
+	.bonus-main h3 {
+		margin: 0;
+	}
+	.bonus-buttons {
+		text-align: center;
+	}
+
 </style>
 </head>
 <!-- End CSS -->
 
 <body>
 	<div class="container">
-		<!-- Top color bar, logo, and footer -->
+		<!-- Top color bar and logo -->
 		<div class="top-bar row">
 			<div class="col-xs-2 bar-1"></div>
 			<div class="col-xs-4 bar-2"></div>
@@ -193,9 +214,6 @@
 		</div>
 		<div class="logo">
 			<img src="assets/image/logo_century_link.png">
-		</div>
-		<div class="footer">
-			Want to learn more? Email us now
 		</div>
 		<!-- Welcome screen -->
 		<div class="screen" id="screen_1">
@@ -383,46 +401,46 @@
 			<p class="intro">centurylink partner quiz</p>
 			<h2>Thanks for your selection.</h2>
 			<p>Please fill out the form so we know where to send your prize.</p>
-			<form action="submit.php" method="post">
+			<form id="user_form">
 				<div class="row form-top">
 					Partner prize form
 				</div>
 				<div class="row">
 					<div class="col col-md-12">
 						<label>Prize selection:</label>
-						<input class="form-control" type="text" name="prize" readonly style="background-color: white;">
+						<input class="form-control" type="text" id="prize" name="prize" readonly style="background-color: white;">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-md-5">
 						<label>First Name:</label>
-						<input class="form-control" type="text" name="firstname" placeholder="John" required>
+						<input class="form-control" type="text" id="firstname" name="firstname" placeholder="John" required>
 					</div>
 					<div class="col col-md-7">
 						<label>Last Name:</label>
-						<input class="form-control" type="text" name="lastname" placeholder="Smith" required>
+						<input class="form-control" type="text" id="lastname" name="lastname" placeholder="Smith" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-md-12">
 						<label>Mailing Address 1:</label>
-						<input class="form-control" type="text" name="address1" placeholder="123 Street Name" required>
+						<input class="form-control" type="text" id="address1" name="address1" placeholder="123 Street Name" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-md-12">
 						<label>Mailing Address 2:</label>
-						<input class="form-control" type="text" name="address2" placeholder="Suite No 2">
+						<input class="form-control" type="text" id="address2" name="address2" placeholder="Suite No 2">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-md-5">
 						<label>City:</label>
-						<input class="form-control" type="text" name="city" placeholder="Johnstown" required>
+						<input class="form-control" type="text" id="city" name="city" placeholder="Johnstown" required>
 					</div>
 					<div class="col col-md-2">
 						<label>State:</label>
-						<select class="form-control" type="text" name="state" required>
+						<select class="form-control" type="text" id="state" name="state" required>
 							<option value=""></option>
 							<option value="AK">AK</option>
 							<option value="AL">AL</option>
@@ -478,21 +496,21 @@
 					</div>
 					<div class="col col-md-5">
 						<label>Zip Code:</label>
-						<input class="form-control" type="text" name="zipcode" placeholder="12345" required>
+						<input class="form-control" type="text" id="zipcode" name="zipcode" placeholder="12345" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-md-4">
 						<label>Phone:</label>
-						<input class="form-control" type="text" name="phone" placeholder="719-123-4567">
+						<input class="form-control" type="text" id="phone" name="phone" placeholder="719-123-4567">
 					</div>
 					<div class="col col-md-8">
 						<label>Email:</label>
-						<input class="form-control" type="email" name="email" placeholder="smith@company.com">
+						<input class="form-control" type="email" id="email" name="email" placeholder="smith@company.com">
 					</div>
 				</div>
 				<button class="btn btn-primary pull-right submit-btn" type="button" onclick="changeScreen(8,9)">Submit</button>
-				<input id="drawing" type="hidden" name="drawing" value="0">
+				<input type="hidden" id="drawing" name="drawing" value="0">
 			</form>
 			<div class="row fine-print" style="margin-top: 75px;">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
@@ -500,25 +518,91 @@
 		</div>
 		<!-- Bonus question -->
 		<div class="screen secondary-screen" id="screen_9">
-
+			<p class="intro">centurylink partner quiz</p>
+			<h2 class="">Thanks! Now try the BONUS question!</h2>
+			<div class="bonus-header">
+				<div class="row">
+					<div class="col-xs-8">
+						Get the correct answer and be entered into a random drawing to win a flat screen TV!
+					</div>
+					<div class="col-xs-4">
+						<!-- gift image -->
+					</div>
+				</div>
+			</div>
+			<div class="bonus-main">
+				<h3>How many global route miles of fiber does CenturyLink have across its network?</h3>
+				<div class="bonus-buttons">
+					<div>
+						<button id="6a" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','a')">A. 50,000</button>
+					</div>
+					<div>
+						<button id="6b" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','b')">B. 100,000</button>
+					</div>
+					<div>
+						<button id="6c" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','c')">C. 250,000</button>
+					</div>
+					<div>
+						<button id="6d" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','d')">D. 450,000</button>
+					</div>
+				</div>
+			</div>
+			<div class="row fine-print" style="margin-top: 75px;">
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="footer">
+			Want to learn more? Email us now
 		</div>
 	</div>
 
 	<!-- Begin JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 
 		var correct = 0;
 
+		// submit form data to backend
+		$('#user_form').submit(function(e){
+		    e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "submit.php",
+                data: $('#user_form').serialize(),
+                success: function(result){
+                    // TODO show success screen
+                    alert("success!");
+                }
+           });
+		});
+
 		// shift the current view off screen, shift next view onto screen
 		function changeScreen(current, next) {
+			// check for form submit
+			if (current == 8) {
+				// check form values
+				$("#user_form").validate();
+				if (!$("#user_form").valid()) {
+					return;
+				}
+			}
 			$("#screen_"+current).animate({ left: '-150%' }, 750 );
             $("#screen_"+next).animate({ left: '50%' }, 750 ).show();
 		}
 
 		// response button click
 		function select(group, value) {
+			// check for bonus
+			if (group == 6) {
+				// TODO check answer
+				// TODO adjust drawing value
+				// submit form
+				$("#user_form").submit();
+				return;
+			}
 			// select radio input
 			$('input[name="' + group+ '"]').val([value]);
 			submitAnswer(group);
