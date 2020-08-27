@@ -13,8 +13,17 @@ if ($conn->connect_error) {
 }
 
 // insert user data
+$prize = $_POST['prize'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
+$address1 = $_POST['address1'];
+$address2 = $_POST['address2'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zipcode = $_POST['zipcode'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$drawing = $_POST['drawing'];
 
 $sql = "INSERT INTO user (firstname, lastname) VALUES ('".$firstname."', '".$lastname."')";
 
