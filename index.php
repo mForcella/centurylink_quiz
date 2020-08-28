@@ -11,6 +11,7 @@
 	body {
 	    overflow-x: hidden;
 	    color: white;
+	    background-color: black;
 	}
 	button {
 		border-radius: 0 !important;
@@ -31,11 +32,7 @@
 		color: #3AD69C;
 		text-decoration: none;
 	}
-	input:read-only, input:-moz-read-only {
-		background-color: white;
-	}
 	.container {
-	    background-color: black;
 	    height: 100vh;
 	    width: 100%;
 	}
@@ -48,6 +45,10 @@
 	.secondary-screen {
 		left: 150%;
 		display: none;
+	}
+	.buffer {
+		margin-top: 75px;
+		margin-bottom: 75px;
 	}
 
 	/* color bar, footer, logo */
@@ -255,7 +256,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3)">Next Question ›</button>
 			</div>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -286,7 +287,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4)">Next Question ›</button>
 			</div>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -309,7 +310,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5)">Next Question ›</button>
 			</div>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -332,7 +333,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6)">Next Question ›</button>
 			</div>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -355,7 +356,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7)">Next ›</button>
 			</div>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -377,7 +378,7 @@
 				</div>
 			</div>
 			<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(7,8)">Continue</button>
-			<div class="row fine-print border-top">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -393,7 +394,7 @@
 				<div class="row">
 					<div class="col col-md-12">
 						<label>Prize selection:</label>
-						<input class="form-control" type="text" id="prize" name="prize" readonly>
+						<input class="form-control" type="text" id="prize" name="prize" readonly style="background-color: white;">
 					</div>
 				</div>
 				<div class="row">
@@ -447,7 +448,7 @@
 				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9)">Submit</button>
 				<input type="hidden" id="drawing" name="drawing" value="0">
 			</form>
-			<div class="row fine-print" style="margin-top: 75px;">
+			<div class="row fine-print buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -493,7 +494,7 @@
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10)">Finish</button>
 			</div>
-			<div class="row fine-print" style="margin-top: 75px;">
+			<div class="row fine-print buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -505,7 +506,7 @@
 			<p>Please reach out to <a href="mailto: partners@centurylink.com">partners@centurylink.com</a> for more information on the CenturyLink Channel Partner Program, or visit <a href="https://www.centurylink.com/business/partner">www.centurylink.com/business/partner</a></p>
 			<!-- TODO close quiz action? -->
 			<button class="btn btn-primary pull-right zoomable" onclick="">Close Quiz</button>
-			<div class="row fine-print border-top" style="margin-top: 75px;">
+			<div class="row fine-print border-top buffer">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
@@ -547,6 +548,8 @@
 
 		// shift the current view off screen, shift next view onto screen
 		function changeScreen(current, next) {
+			// scroll to top of screen
+			window.scrollTo(0, 0);
 			// check for form submit
 			if (current == 8) {
 				// check form values

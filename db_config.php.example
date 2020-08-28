@@ -3,9 +3,9 @@
 <?php
 
 $db_config['servername'] = "localhost";
-$db_config['username'] = "root";
+$db_config['username'] = "ecollect_ctlquiz";
 $db_config['password'] = "password";
-$db_config['dbname'] = "ecollective";
+$db_config['dbname'] = "ecollect_ctlquiz";
 
 ?>
 </body>
