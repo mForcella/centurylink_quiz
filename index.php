@@ -13,19 +13,31 @@
 	    color: white;
 	}
 	button {
-		margin-left: 10px;
 		border-radius: 0 !important;
 		background-color: #0D49B5 !important;
 		font-size: 16px !important;
+		width: 150px !important;
+		padding: 10px !important;
+		margin: 5px !important;
+		outline: none !important;
+		transition: all 0.3s;
+	}
+	.zoomable:hover {
+		width: 156px !important;
+		padding: 13px !important;
+		margin: 2px !important;
 	}
 	a, a:hover {
 		color: #3AD69C;
 		text-decoration: none;
 	}
+	input:read-only, input:-moz-read-only {
+		background-color: white;
+	}
 	.container {
 	    background-color: black;
 	    height: 100vh;
-	    width: 95%;
+	    width: 100%;
 	}
 	.screen {
 		position: absolute;
@@ -50,10 +62,15 @@
 		bottom: 0;
 		height: 50px;
 		background-color: #0D49B5; 
-		width: 95%;
+		width: 100%;
 		padding: 15px;
 		margin-left: -15px;
 		text-align: center;
+		cursor: pointer;
+		transition: transform 0.5s;
+	}
+	.footer:hover {
+		transform: scale(1.1);
 	}
 	.top-bar > div {
 		height: 5px;
@@ -70,17 +87,6 @@
 	}
 
 	/* welcome screen */
-	.quiz-btn {
-		width: 150px;
-		transition: all 0.3s ease;
-		padding: 10px;
-		margin: 3px;
-	}
-	.quiz-btn:hover {
-		width: 156px;
-		padding: 13px;
-		margin: 0;
-	}
 	.bordered {
 		border-top: 1px solid #46484D;
 		border-bottom: 1px solid #46484D;
@@ -101,9 +107,6 @@
 	}
 
 	/* question screens */
-	.btn-response:focus {
-		outline: none;
-	}
 	.correct, .correct:hover, .correct:focus {
 		background-color: #3AD69C !important;
 		border-color: #3AD69C !important;
@@ -112,17 +115,6 @@
 		background-color: black !important;
 		border-color: #777 !important;
 		color: #777 !important;
-	}
-	.btn-response {
-		width: 150px;
-		padding: 10px;
-		margin: 5px;
-		transition: all 0.3s ease;
-	}
-	.zoomable:hover {
-		width: 156px;
-		padding: 13px;
-		margin: 2px;
 	}
 	.answer {
 		background-color: #1a1a1a;
@@ -169,17 +161,10 @@
 		text-transform: uppercase;
 	}
 	.submit-btn {
-		width: 150px;
-		transition: all 0.3s ease;
-		padding: 10px;
-		margin: 3px;
-		margin-top: 30px;
+		margin-top: 30px !important;
 	}
 	.submit-btn:hover {
-		width: 156px;
-		padding: 13px;
-		margin: 0;
-		margin-top: 27px;
+		margin-top: 27px !important;
 	}
 
 	/* bonus question */
@@ -231,16 +216,16 @@
 					<p class="fine-print">
 						No purchase necessary to enter or win. Void where prohibited. Up to 2 entries per individual. Must
 						be 18 years of age to enter. Entry period begins 09/08/20 at 11:00 a.m. EDT and ends on 09/10/20
-						at 2:00 p.m. EDT. <a href="www.centurylink.com/xxx">For complete rules see www.centurylink.com/xxx</a>
+						at 2:00 p.m. EDT. <a href="https://www.centurylink.com/xxx">For complete rules see www.centurylink.com/xxx</a>
 					</p>
-					<button class="btn btn-primary pull-right quiz-btn" onclick="changeScreen(1,8)">Quiz Me!</button>
+					<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(1,2)">Quiz Me!</button>
 				</div>
 			</div>
 			<div class="row bordered">
-				Our Channel Partners help drive our success. <a href="">Join the CenturyLink Channel Parner Program ›</a>
+				Our Channel Partners help drive our success. <a href="https://">Join the CenturyLink Channel Parner Program ›</a>
 			</div>
 			<div class="row fine-print">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Question 1 -->
@@ -249,29 +234,29 @@
 			<h3>How many global route miles of fiber does CenturyLink have across its network?</h3>
 			<div>
 				<input type="radio" name="1" value="a" hidden>
-				<button id="1a" class="btn btn-primary btn-response btn_1 zoomable" onclick="select('1','a')">A. 50,000</button>
+				<button id="1a" class="btn btn-primary btn_1 zoomable" onclick="select('1','a')">A. 50,000</button>
 			</div>
 			<div>
 				<input type="radio" name="1" value="b" hidden>
-				<button id="1b" class="btn btn-primary btn-response btn_1 zoomable" onclick="select('1','b')">B. 100,000</button>
+				<button id="1b" class="btn btn-primary btn_1 zoomable" onclick="select('1','b')">B. 100,000</button>
 			</div>
 			<div>
 				<input type="radio" name="1" value="c" hidden>
-				<button id="1c" class="btn btn-primary btn-response btn_1 zoomable" onclick="select('1','c')">C. 250,000</button>
+				<button id="1c" class="btn btn-primary btn_1 zoomable" onclick="select('1','c')">C. 250,000</button>
 			</div>
 			<div>
 				<input type="radio" name="1" value="d" hidden>
-				<button id="1d" class="btn btn-primary btn-response btn_1 zoomable" onclick="select('1','d')">D. 450,000</button>
+				<button id="1d" class="btn btn-primary btn_1 zoomable" onclick="select('1','d')">D. 450,000</button>
 			</div>
 			<div class="opaque row" id="answer_1">
 				<div class="answer">
-					<p class="intro">The answer is: d. 450,000!</p>
+					<p class="intro" id="answer_1_intro">The answer is: d. 450,000!</p>
 					<p>CenturyLink's powerful and expansive global network spans approximately 450,000 global route miles of fiber with 170,000 on-net buildings.</p>
 				</div>
-				<button class="btn btn-primary pull-right" onclick="changeScreen(2,3)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Question 2 -->
@@ -280,52 +265,52 @@
 			<h3>How many cybersecurity threats are monitored daily on CenturyLink's network?</h3>
 			<div>
 				<input type="radio" name="2" value="a" hidden>
-				<button id="2a" class="btn btn-primary btn-response btn_2 zoomable" onclick="select('2','a')">A. 570,000</button>
+				<button id="2a" class="btn btn-primary btn_2 zoomable" onclick="select('2','a')">A. 570,000</button>
 			</div>
 			<div>
 				<input type="radio" name="2" value="b" hidden>
-				<button id="2b" class="btn btn-primary btn-response btn_2 zoomable" onclick="select('2','b')">B. 1.4 million</button>
+				<button id="2b" class="btn btn-primary btn_2 zoomable" onclick="select('2','b')">B. 1.4 million</button>
 			</div>
 			<div>
 				<input type="radio" name="2" value="c" hidden>
-				<button id="2c" class="btn btn-primary btn-response btn_2 zoomable" onclick="select('2','c')">C. 2.1 million</button>
+				<button id="2c" class="btn btn-primary btn_2 zoomable" onclick="select('2','c')">C. 2.1 million</button>
 			</div>
 			<div>
 				<input type="radio" name="2" value="d" hidden>
-				<button id="2d" class="btn btn-primary btn-response btn_2 zoomable" onclick="select('2','d')">D. 3.6 million</button>
+				<button id="2d" class="btn btn-primary btn_2 zoomable" onclick="select('2','d')">D. 3.6 million</button>
 			</div>
 			<div class="opaque row" id="answer_2">
 				<div class="answer">
-					<p class="intro">The answer is: d. 3.6 million!</p>
+					<p class="intro" id="answer_2_intro">The answer is: d. 3.6 million!</p>
 					<p>CenturyLink's threat research arm, Black Lotus Labs, analyzes 190 billion NetFlow sessions and over 3.6 million security events every day.</p>
 				</div>
-				<button class="btn btn-primary pull-right" onclick="changeScreen(3,4)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Question 3 -->
 		<div class="screen secondary-screen" id="screen_4">
 			<p class="intro">Question 3 of 5</p>
-			<h3>True or False? CenturyLink is investing heavily in enhancements to the customer experience with simpler products, more automation and faster delivery.</h3>
+			<h3>True or False? CenturyLink is investing heavily in enhancements to the customer experience with simpler products, more automation, and faster delivery.</h3>
 			<div>
 				<input type="radio" name="3" value="a" hidden>
-				<button id="3a" class="btn btn-primary btn-response btn_3 zoomable" onclick="select('3','a')">True</button>
+				<button id="3a" class="btn btn-primary btn_3 zoomable" onclick="select('3','a')">True</button>
 			</div>
 			<div>
 				<input type="radio" name="3" value="b" hidden>
-				<button id="3b" class="btn btn-primary btn-response btn_3 zoomable" onclick="select('3','b')">False</button>
+				<button id="3b" class="btn btn-primary btn_3 zoomable" onclick="select('3','b')">False</button>
 			</div>
 			<div class="opaque row" id="answer_3">
 				<div class="answer">
-					<p class="intro">The answer is: true!</p>
+					<p class="intro" id="answer_3_intro">The answer is: true!</p>
 					<p>In 2020, CenturyLink is investing $200 million across the customer journey, empowering our customers to deploy transformative technologies for continued success and growth.</p>
 				</div>
-				<button class="btn btn-primary pull-right" onclick="changeScreen(4,5)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Question 4 -->
@@ -334,21 +319,21 @@
 			<h3>True or False? CenturyLink Channel Partners have access to a variety of sales and marketing tools to go to market and drive demand, including our co-marketing automation tool delivered via Aprimo.</h3>
 			<div>
 				<input type="radio" name="4" value="a" hidden>
-				<button id="4a" class="btn btn-primary btn-response btn_4 zoomable" onclick="select('4','a')">True</button>
+				<button id="4a" class="btn btn-primary btn_4 zoomable" onclick="select('4','a')">True</button>
 			</div>
 			<div>
 				<input type="radio" name="4" value="b" hidden>
-				<button id="4b" class="btn btn-primary btn-response btn_4 zoomable" onclick="select('4','b')">False</button>
+				<button id="4b" class="btn btn-primary btn_4 zoomable" onclick="select('4','b')">False</button>
 			</div>
 			<div class="opaque row" id="answer_4">
 				<div class="answer">
-					<p class="intro">The answer is: true!</p>
+					<p class="intro" id="answer_4_intro">The answer is: true!</p>
 					<p>CenturyLink Channel Partners have access to training, tools and programs necessary to grow their businesses - including world-class sales, marketing, development, operational and maintenance support throughout the entire customer lifecycle.</p>
 				</div>
-				<button class="btn btn-primary pull-right" onclick="changeScreen(5,6)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Question 5 -->
@@ -357,21 +342,21 @@
 			<h3>True or False? CenturyLink's Partner Incentives are stackable, and a Partner can earn multiple payouts on one opportunity.</h3>
 			<div>
 				<input type="radio" name="5" value="a" hidden>
-				<button id="5a" class="btn btn-primary btn-response btn_5 zoomable" onclick="select('5','a')">True</button>
+				<button id="5a" class="btn btn-primary btn_5 zoomable" onclick="select('5','a')">True</button>
 			</div>
 			<div>
 				<input type="radio" name="5" value="b" hidden>
-				<button id="5b" class="btn btn-primary btn-response btn_5 zoomable" onclick="select('5','b')">False</button>
+				<button id="5b" class="btn btn-primary btn_5 zoomable" onclick="select('5','b')">False</button>
 			</div>
 			<div class="opaque row" id="answer_5">
 				<div class="answer">
-					<p class="intro">The answer is: true!</p>
+					<p class="intro" id="answer_5_intro">The answer is: true!</p>
 					<p>All of CenturyLink's Partnet Incentives are stackable, meaning a Partner may be eligible for more than one payout if their opportunity qualifies for more than one Incentive. For full Incentive details, contact your Channel Manager or email Partners@centurylink.com.</p>
 				</div>
-				<button class="btn btn-primary pull-right" onclick="changeScreen(6,7)">Finish</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7)">Next ›</button>
 			</div>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Prize selections -->
@@ -391,9 +376,9 @@
 				<div class="col-md-4" class="prize_3">
 				</div>
 			</div>
-			<button class="btn btn-primary pull-right" onclick="changeScreen(7,8)">Continue</button>
+			<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(7,8)">Continue</button>
 			<div class="row fine-print border-top">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- User info screen -->
@@ -408,7 +393,7 @@
 				<div class="row">
 					<div class="col col-md-12">
 						<label>Prize selection:</label>
-						<input class="form-control" type="text" id="prize" name="prize" readonly style="background-color: white;">
+						<input class="form-control" type="text" id="prize" name="prize" readonly>
 					</div>
 				</div>
 				<div class="row">
@@ -442,56 +427,6 @@
 						<label>State:</label>
 						<select class="form-control" type="text" id="state" name="state" required>
 							<option value=""></option>
-							<option value="AK">AK</option>
-							<option value="AL">AL</option>
-							<option value="AR">AR</option>
-							<option value="AZ">AZ</option>
-							<option value="CA">CA</option>
-							<option value="CO">CO</option>
-							<option value="CT">CT</option>
-							<option value="DE">DE</option>
-							<option value="FL">FL</option>
-							<option value="GA">GA</option>
-							<option value="HI">HI</option>
-							<option value="IA">IA</option>
-							<option value="ID">ID</option>
-							<option value="IL">IL</option>
-							<option value="IN">IN</option>
-							<option value="KS">KS</option>
-							<option value="KY">KY</option>
-							<option value="LA">LA</option>
-							<option value="MA">MA</option>
-							<option value="MD">MD</option>
-							<option value="ME">ME</option>
-							<option value="MI">MI</option>
-							<option value="MN">MN</option>
-							<option value="MO">MO</option>
-							<option value="MS">MS</option>
-							<option value="MT">MT</option>
-							<option value="NC">NC</option>
-							<option value="ND">ND</option>
-							<option value="NE">NE</option>
-							<option value="NH">NH</option>
-							<option value="NJ">NJ</option>
-							<option value="NM">NM</option>
-							<option value="NV">NV</option>
-							<option value="NY">NY</option>
-							<option value="OH">OH</option>
-							<option value="OK">OK</option>
-							<option value="OR">OR</option>
-							<option value="PA">PA</option>
-							<option value="RI">RI</option>
-							<option value="SC">SC</option>
-							<option value="SD">SD</option>
-							<option value="TN">TN</option>
-							<option value="TX">TX</option>
-							<option value="UT">UT</option>
-							<option value="VA">VA</option>
-							<option value="VT">VT</option>
-							<option value="WA">WA</option>
-							<option value="WI">WI</option>
-							<option value="WV">WV</option>
-							<option value="WY">WY</option>
 						</select>
 					</div>
 					<div class="col col-md-5">
@@ -509,11 +444,11 @@
 						<input class="form-control" type="email" id="email" name="email" placeholder="smith@company.com">
 					</div>
 				</div>
-				<button class="btn btn-primary pull-right submit-btn" type="button" onclick="changeScreen(8,9)">Submit</button>
+				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9)">Submit</button>
 				<input type="hidden" id="drawing" name="drawing" value="0">
 			</form>
 			<div class="row fine-print" style="margin-top: 75px;">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- Bonus question -->
@@ -531,30 +466,53 @@
 				</div>
 			</div>
 			<div class="bonus-main">
-				<h3>How many global route miles of fiber does CenturyLink have across its network?</h3>
+				<h3>How many popular brand licorice candy ropes would it take end-to-end to match the CenturyLink fiber network?</h3>
 				<div class="bonus-buttons">
 					<div>
-						<button id="6a" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','a')">A. 50,000</button>
+						<input type="radio" name="6" value="a" hidden>
+						<button id="6a" class="btn btn-primary btn_6 zoomable" onclick="select('6','a')">A. 35,640,000</button>
 					</div>
 					<div>
-						<button id="6b" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','b')">B. 100,000</button>
+						<input type="radio" name="6" value="b" hidden>
+						<button id="6b" class="btn btn-primary btn_6 zoomable" onclick="select('6','b')">B. 356,400,000</button>
 					</div>
 					<div>
-						<button id="6c" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','c')">C. 250,000</button>
+						<input type="radio" name="6" value="c" hidden>
+						<button id="6c" class="btn btn-primary btn_6 zoomable" onclick="select('6','c')">C. 3,564,000,000</button>
 					</div>
 					<div>
-						<button id="6d" class="btn btn-primary btn-response btn_6 zoomable" onclick="select('6','d')">D. 450,000</button>
+						<input type="radio" name="6" value="d" hidden>
+						<button id="6d" class="btn btn-primary btn_6 zoomable" onclick="select('6','d')">D. 35,640,000,000</button>
 					</div>
 				</div>
 			</div>
+			<div class="opaque row" id="answer_6">
+				<div class="answer">
+					<p class="intro" id="answer_6_intro">The answer is: c. 3,564,000,000!</p>
+					<p>At 8 inches in length, it would take over 3.5 billion red licorice candy ropes to equal 450,000 route miles of CenturyLink fiber!</p>
+				</div>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10)">Finish</button>
+			</div>
 			<div class="row fine-print" style="margin-top: 75px;">
-				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
+			</div>
+		</div>
+		<!-- Thank you page -->
+		<div class="screen secondary-screen" id="screen_10">
+			<h2>Thank you for visiting our booth and participating in our quiz!</h2>
+			<p>Your prize will be mailed to the address you provided in 2 - 3 weeks.</p>
+			<p id="drawing_msg"></p>
+			<p>Please reach out to <a href="mailto: partners@centurylink.com">partners@centurylink.com</a> for more information on the CenturyLink Channel Partner Program, or visit <a href="https://www.centurylink.com/business/partner">www.centurylink.com/business/partner</a></p>
+			<!-- TODO close quiz action? -->
+			<button class="btn btn-primary pull-right zoomable" onclick="">Close Quiz</button>
+			<div class="row fine-print border-top" style="margin-top: 75px;">
+				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="https://www.centurylink.com/xxx">For complete rules, see www.centurylink.com/xxx</a>
 			</div>
 		</div>
 		<!-- footer -->
-		<div class="footer">
+		<a class="footer" href="mailto: partners@centurylink.com">
 			Want to learn more? Email us now
-		</div>
+		</a>
 	</div>
 
 	<!-- Begin JavaScript -->
@@ -565,18 +523,26 @@
 
 		var correct = 0;
 
-		// submit form data to backend
-		$('#user_form').submit(function(e){
-		    e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "submit.php",
-                data: $('#user_form').serialize(),
-                success: function(result){
-                    // TODO show success screen
-                    alert("success!");
-                }
-           });
+		$( document ).ready(function() {
+			// add states to select input
+			var states = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+			for (var i in states) {
+				$("#state").append(new Option(states[i], states[i]));
+			}
+
+			// submit form data to backend
+			$('#user_form').submit(function(e){
+			    e.preventDefault();
+	            $.ajax({
+	                type: "POST",
+	                url: "submit.php",
+	                data: $('#user_form').serialize(),
+	                success: function(result){
+	                	// form successfully submitted
+	                	console.log(result);
+	                }
+	           });
+			});
 		});
 
 		// shift the current view off screen, shift next view onto screen
@@ -595,14 +561,6 @@
 
 		// response button click
 		function select(group, value) {
-			// check for bonus
-			if (group == 6) {
-				// TODO check answer
-				// TODO adjust drawing value
-				// submit form
-				$("#user_form").submit();
-				return;
-			}
 			// select radio input
 			$('input[name="' + group+ '"]').val([value]);
 			submitAnswer(group);
@@ -610,7 +568,7 @@
 
 		// submit user response
 		function submitAnswer(id) {
-			var answers = ['d', 'd', 'a', 'a', 'a'];
+			var answers = ['d', 'd', 'a', 'a', 'a', 'c'];
 			// check user response
 			var response = $('input[name="'+id+'"]:checked').val();
 			var answer = answers[id-1];
@@ -625,16 +583,33 @@
 				return false;
 			});
 			// reveal answer
+			var msg = response == answer ? "Yes, that’s right!<br>" : "Oh, no, that’s not correct.<br>";
+			$("#answer_"+id+"_intro").html(msg+$("#answer_"+id+"_intro").html());
 			$("#answer_"+id).fadeTo( "slow" , 1.0);
 			// check for end of quiz
 			if (id == 5) {
 				$("#quiz_grade").html("You answered "+correct+" correctly!");
 				// enter into drawing if all questions are correct
-				if (correctly == 5) {
+				if (correct == 5) {
 					$("#drawing").val(1);
 				}
 				// TODO build prize page based on correct responses
 
+			}
+			// check for bonus
+			if (id == 6) {
+				// check answer and adjust drawing value
+				if (response == answer) {
+					$("#drawing").val($("#drawing").val()+1);
+				}
+				// submit form
+				$("#user_form").submit();
+				// set drawing value on thank you page
+				var drawings = $("#drawing").val();
+				if (drawings > 0) {
+					var drawing_msg = drawings == 1 ? "You also earned 1 entry into the drawing!" : "You also earned 2 entries into the drawing!";
+					$("#drawing_msg").html(drawing_msg);
+				}
 			}
 		}
 	</script>

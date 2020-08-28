@@ -2,6 +2,20 @@
 <body>
 <?php
 
+// CREATE TABLE user (
+//     prize varchar(255),
+//     firstname varchar(255),
+//     lastname varchar(255),
+//     address1 varchar(255),
+//     address2 varchar(255),
+//     city varchar(255),
+//     state varchar(255),
+//     zipcode varchar(255),
+//     phone varchar(255),
+//     email varchar(255),
+//     drawing int
+// );
+
 include_once('db_config.php');
 
 // create connection
@@ -25,7 +39,7 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $drawing = $_POST['drawing'];
 
-$sql = "INSERT INTO user (firstname, lastname) VALUES ('".$firstname."', '".$lastname."')";
+$sql = "INSERT INTO user (prize, firstname, lastname, address1, address2, city, state, zipcode, phone, email, drawing) VALUES ('".$prize."', '".$firstname."', '".$lastname."', '".$address1."', '".$address2."', '".$city."', '".$state."', '".$zipcode."', '".$phone."', '".$email."', ".$drawing.")";
 
 if ($conn->query($sql) === TRUE) {
 	echo "New record created successfully";
