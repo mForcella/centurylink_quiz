@@ -3,6 +3,7 @@
 <?php
 
 // CREATE TABLE user (
+//     id int NOT NULL AUTO_INCREMENT,
 //     prize varchar(255),
 //     firstname varchar(255),
 //     lastname varchar(255),
@@ -13,7 +14,9 @@
 //     zipcode varchar(255),
 //     phone varchar(255),
 //     email varchar(255),
-//     drawing int
+//     drawing int,
+//     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+//     primary key (id)
 // );
 
 include_once('db_config.php');
