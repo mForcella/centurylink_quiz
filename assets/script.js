@@ -106,8 +106,8 @@ function submitAnswer(id) {
 		return false;
 	});
 	// reveal answer
-	var msg = response == answer ? "Yes, that’s right!" : "Oh, no, that’s not correct.";
-	$("#answer_"+id+"_intro").html(msg);
+	var unhide = response == answer ? "wrong" : "right";
+	$("#answer_"+id+"_response_"+unhide).show();
 	$("#answer_"+id).removeClass("hidden");
 	// check for end of quiz
 	if (id == 5) {

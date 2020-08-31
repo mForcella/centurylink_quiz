@@ -77,7 +77,8 @@
 			</div>
 			<div class="hidden row" id="answer_1">
 				<div class="answer">
-					<p class="intro" id="answer_1_intro"><br></p>
+					<p class="intro" id="answer_1_response_wrong" hidden>Yes, that’s right!</p>
+					<p class="intro" id="answer_1_response_right" hidden>Oh, no, that’s not correct.</p>
 					<p class="intro">The answer is: d. 450,000!</p>
 					<p>CenturyLink's powerful and expansive global network spans approximately 450,000 global route miles of fiber with 170,000 on-net buildings.</p>
 				</div>
@@ -109,7 +110,8 @@
 			</div>
 			<div class="hidden row" id="answer_2">
 				<div class="answer">
-					<p class="intro" id="answer_2_intro"><br></p>
+					<p class="intro" id="answer_2_response_wrong" hidden>You are correct!</p>
+					<p class="intro" id="answer_2_response_right" hidden>No, sorry, that’s not right</p>
 					<p class="intro">The answer is: d. 3.6 million!</p>
 					<p>CenturyLink's threat research arm, Black Lotus Labs, analyzes 190 billion NetFlow sessions and over 3.6 million security events every day.</p>
 				</div>
@@ -133,8 +135,9 @@
 			</div>
 			<div class="hidden row" id="answer_3">
 				<div class="answer">
-					<p class="intro" id="answer_3_intro"><br></p>
-					<p class="intro">The answer is: true!</p>
+					<p class="intro" id="answer_3_response_wrong" hidden>Yes, this is true!</p>
+					<p class="intro" id="answer_3_response_right" hidden>No, the answer to this one is true!</p>
+					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>In 2020, CenturyLink is investing $200 million across the customer journey, empowering our customers to deploy transformative technologies for continued success and growth.</p>
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5)">Next Question ›</button>
@@ -157,9 +160,10 @@
 			</div>
 			<div class="hidden row" id="answer_4">
 				<div class="answer">
-					<p class="intro" id="answer_4_intro"><br></p>
-					<p class="intro">The answer is: true!</p>
-					<p>CenturyLink Channel Partners have access to training, tools and programs necessary to grow their businesses - including world-class sales, marketing, development, operational and maintenance support throughout the entire customer lifecycle.</p>
+					<p class="intro" id="answer_4_response_wrong" hidden>Great job! It’s very true!</p>
+					<p class="intro" id="answer_4_response_right" hidden>Oh, no, this is true!</p>
+					<!-- <p class="intro">The answer is: true!</p> -->
+					<p>CenturyLink Channel Partners have access to the training, tools, and programs necessary to help grow their businesses—-including world-class sales, marketing, development, operational, and maintenance support throughout the entire customer lifecycle.</p>
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6)">Next Question ›</button>
 			</div>
@@ -181,9 +185,10 @@
 			</div>
 			<div class="hidden row" id="answer_5">
 				<div class="answer">
-					<p class="intro" id="answer_5_intro"><br></p>
-					<p class="intro">The answer is: true!</p>
-					<p>All of CenturyLink's Partnet Incentives are stackable, meaning a Partner may be eligible for more than one payout if their opportunity qualifies for more than one Incentive. For full Incentive details, contact your Channel Manager or email Partners@centurylink.com.</p>
+					<p class="intro" id="answer_5_response_wrong" hidden>You know your stuff! This IS true!</p>
+					<p class="intro" id="answer_5_response_right" hidden>No, sorry, it is true!</p>
+					<!-- <p class="intro">The answer is: true!</p> -->
+					<p>All of CenturyLink's Partner Incentives are stackable, meaning a Partner may be eligible for more than one payout if their opportunity qualifies for more than one Incentive. For full Incentive details, contact your Channel Manager or email Partners@centurylink.com.</p>
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7)">Next ›</button>
 			</div>
@@ -306,17 +311,17 @@
 				</div>
 				<div class="row">
 					<div class="col col-sm-5">
-						<label>First Name:</label>
+						<label>*First Name:</label>
 						<input class="form-control" type="text" name="firstname" placeholder="John" required>
 					</div>
 					<div class="col col-sm-7">
-						<label>Last Name:</label>
+						<label>*Last Name:</label>
 						<input class="form-control" type="text" name="lastname" placeholder="Smith" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-sm-12">
-						<label>Mailing Address 1:</label>
+						<label>*Mailing Address 1:</label>
 						<input class="form-control" type="text" name="address1" placeholder="123 Street Name" required>
 					</div>
 				</div>
@@ -328,42 +333,42 @@
 				</div>
 				<div class="row desktop-only">
 					<div class="col col-sm-5">
-						<label>City:</label>
+						<label>*City:</label>
 						<input class="form-control" type="text" id="city_desktop" name="city" placeholder="Johnstown" required>
 					</div>
 					<div class="col col-sm-2">
-						<label>State:</label>
+						<label>*State:</label>
 						<select class="form-control" type="text" id="state_desktop" name="state" required>
 							<option value=""></option>
 						</select>
 					</div>
 					<div class="col col-sm-5">
-						<label>Zip Code:</label>
+						<label>*Zip Code:</label>
 						<input class="form-control" type="text" id="zipcode_desktop" name="zipcode" placeholder="12345" required>
 					</div>
 				</div>
 				<div class="row mobile-only">
 					<div class="col col-sm-12">
-						<label>City:</label>
+						<label>*City:</label>
 						<input class="form-control" type="text" id="city_mobile" name="city" placeholder="Johnstown" required>
 					</div>
 				</div>
 				<div class="row mobile-only">
 					<div class="col col-xs-4">
-						<label>State:</label>
+						<label>*State:</label>
 						<select class="form-control" type="text" id="state_mobile" name="state" required>
 							<option value=""></option>
 						</select>
 					</div>
 					<div class="col col-xs-8">
-						<label>Zip Code:</label>
+						<label>*Zip Code:</label>
 						<input class="form-control" type="text" id="zipcode_mobile" name="zipcode" placeholder="12345" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col col-sm-4">
-						<label>Phone:</label>
-						<input class="form-control" type="text" name="phone" placeholder="719-123-4567">
+						<label>*Phone:</label>
+						<input class="form-control" type="text" name="phone" placeholder="719-123-4567" required>
 					</div>
 					<div class="col col-sm-8">
 						<label>Email:</label>

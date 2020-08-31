@@ -9,7 +9,7 @@ body {
 }
 @media screen and (max-width:767px) {
 	body {
-		background-size: auto 75%;
+		background-size: auto 50%;
 	}
 	.row {
 		margin: 0;
@@ -102,6 +102,9 @@ a, a:hover, a:focus {
 .intro {
 	text-transform: uppercase;
 	color: #3AD69C;
+}
+.error {
+	color: red;
 }
 
 /* color bar, footer, logo */
@@ -227,6 +230,11 @@ a, a:hover, a:focus {
 }
 #prize_level_1, #prize_level_2, #prize_level_3 {
 	margin: 0 -100px !important;
+}
+@media screen and (max-width:767px) {
+	#prize_level_1, #prize_level_2, #prize_level_3 {
+		margin: 0 0 !important;
+	}
 }
 .divider {
 	border-top: 1px solid #46484D;
