@@ -58,7 +58,7 @@ function setPrize(id) {
 }
 
 // shift the current view off screen, shift next view onto screen
-function changeScreen(current, next, back=false) {
+function changeScreen(current, next, back) {
 	// scroll to top of screen
 	window.scrollTo(0, 0);
 	// check for form submit

@@ -43,7 +43,7 @@
 						be 18 years of age to enter. Entry period begins 09/08/20 at 11:00 a.m. EDT and ends on 09/10/20
 						at 2:00 p.m. EDT. <a href="rules.php" target="_blank">For complete rules see www.ctlchannelpartnerquiz.com/rules</a>
 					</p>
-					<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(1,2)">Quiz Me!</button>
+					<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(1,2,false)">Quiz Me!</button>
 				</div>
 			</div>
 			<div class="row bordered">
@@ -82,7 +82,7 @@
 					<p class="intro">The answer is: d. 450,000!</p>
 					<p>CenturyLink's powerful and expansive global network spans approximately 450,000 global route miles of fiber with 170,000 on-net buildings.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3,false)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -115,7 +115,7 @@
 					<p class="intro">The answer is: d. 3.6 million!</p>
 					<p>CenturyLink's threat research arm, Black Lotus Labs, analyzes 190 billion NetFlow sessions and over 3.6 million security events every day.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4,false)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -140,7 +140,7 @@
 					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>In 2020, CenturyLink is investing $200 million across the customer journey, empowering our customers to deploy transformative technologies for continued success and growth.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5,false)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -165,7 +165,7 @@
 					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>CenturyLink Channel Partners have access to the training, tools, and programs necessary to help grow their businesses—-including world-class sales, marketing, development, operational, and maintenance support throughout the entire customer lifecycle.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6,false)">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -190,7 +190,7 @@
 					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>All of CenturyLink's Partner Incentives are stackable, meaning a Partner may be eligible for more than one payout if their opportunity qualifies for more than one Incentive. For full Incentive details, contact your Channel Manager or email Partners@centurylink.com.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7)">Next ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7,false)">Next ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -375,7 +375,7 @@
 						<input class="form-control" type="email" name="email" placeholder="smith@company.com">
 					</div>
 				</div>
-				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9)">Submit</button>
+				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9,false)">Submit</button>
 				<input type="hidden" id="drawing" name="drawing" value="0">
 			</form>
 			<div class="row fine-print border-top buffer-bottom buffer-top">
@@ -426,7 +426,7 @@
 					<p class="intro">The answer is: c. 3,564,000,000!</p>
 					<p>At 8 inches in length, it would take over 3.5 billion red licorice candy ropes to equal 450,000 route miles of CenturyLink fiber!</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10)">Finish</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10,false)">Finish</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
