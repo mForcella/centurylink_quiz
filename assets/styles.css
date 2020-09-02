@@ -320,6 +320,9 @@ select:not([multiple]) {
     background-image: url('image/dropdown.png');
     padding-right: 1.5em
 }
+select::-ms-expand {
+    display: none;
+}
 
 /* bonus question */
 .bonus-header {

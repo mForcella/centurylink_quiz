@@ -63,7 +63,9 @@ function changeScreen(current, next, shiftTo) {
 			next += 2;
 		}
 		// shift screens
-		$("#screen_"+current).animate({ left: shiftTo }, 750 );
+		$("#screen_"+current).animate({ left: shiftTo }, 750, function() {
+			$(this).hide();
+		});
 	    $("#screen_"+next).animate({ left: '50%' }, 750 ).show();
 	});
 }
