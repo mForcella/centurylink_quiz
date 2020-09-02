@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CenturyLink Channel Partner Quiz</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CenturyLink Channel Partner Quiz</title>
 
-<!-- Begin CSS -->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/styles.css" rel="stylesheet">
+	<!-- CSS -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
 </head>
-<!-- End CSS -->
 
 <body>
 	<div class="container">
-		<!-- Top color bar and logo -->
+		<!-- Color bar and logo -->
 		<div class="top-bar row">
 			<div class="col-xs-2 bar-1"></div>
 			<div class="col-xs-4 bar-2"></div>
@@ -43,7 +42,7 @@
 						be 18 years of age to enter. Entry period begins 09/08/20 at 11:00 a.m. EDT and ends on 09/10/20
 						at 2:00 p.m. EDT. <a href="rules.php" target="_blank">For complete rules see www.ctlchannelpartnerquiz.com/rules</a>
 					</p>
-					<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(1,2,false)">Quiz Me!</button>
+					<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(1,2,'-150%')">Quiz Me!</button>
 				</div>
 			</div>
 			<div class="row bordered">
@@ -75,14 +74,14 @@
 				<input type="radio" name="1" value="d" hidden>
 				<button id="1d" class="btn btn-primary btn_1 zoomable" onclick="select('1','d')">D. 450,000</button>
 			</div>
-			<div class="hidden row" id="answer_1">
+			<div class="row" id="answer_1" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_1_response_wrong" hidden>Yes, that’s right!</p>
 					<p class="intro" id="answer_1_response_right" hidden>Oh, no, that’s not correct.</p>
 					<p class="intro">The answer is: d. 450,000!</p>
 					<p>CenturyLink's powerful and expansive global network spans approximately 450,000 global route miles of fiber with 170,000 on-net buildings.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3,false)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(2,3,'-150%')">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -108,14 +107,14 @@
 				<input type="radio" name="2" value="d" hidden>
 				<button id="2d" class="btn btn-primary btn_2 zoomable" onclick="select('2','d')">D. 3.6 million</button>
 			</div>
-			<div class="hidden row" id="answer_2">
+			<div class="row" id="answer_2" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_2_response_wrong" hidden>You are correct!</p>
 					<p class="intro" id="answer_2_response_right" hidden>No, sorry, that’s not right</p>
 					<p class="intro">The answer is: d. 3.6 million!</p>
 					<p>CenturyLink's threat research arm, Black Lotus Labs, analyzes 190 billion NetFlow sessions and over 3.6 million security events every day.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4,false)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(3,4,'-150%')">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -133,14 +132,13 @@
 				<input type="radio" name="3" value="b" hidden>
 				<button id="3b" class="btn btn-primary btn_3 zoomable" onclick="select('3','b')">False</button>
 			</div>
-			<div class="hidden row" id="answer_3">
+			<div class="row" id="answer_3" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_3_response_wrong" hidden>Yes, this is true!</p>
 					<p class="intro" id="answer_3_response_right" hidden>No, the answer to this one is true!</p>
-					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>In 2020, CenturyLink is investing $200 million across the customer journey, empowering our customers to deploy transformative technologies for continued success and growth.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5,false)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(4,5,'-150%')">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -158,14 +156,13 @@
 				<input type="radio" name="4" value="b" hidden>
 				<button id="4b" class="btn btn-primary btn_4 zoomable" onclick="select('4','b')">False</button>
 			</div>
-			<div class="hidden row" id="answer_4">
+			<div class="row" id="answer_4" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_4_response_wrong" hidden>Great job! It’s very true!</p>
 					<p class="intro" id="answer_4_response_right" hidden>Oh, no, this is true!</p>
-					<!-- <p class="intro">The answer is: true!</p> -->
-					<p>CenturyLink Channel Partners have access to the training, tools, and programs necessary to help grow their businesses—-including world-class sales, marketing, development, operational, and maintenance support throughout the entire customer lifecycle.</p>
+					<p>CenturyLink Channel Partners have access to the training, tools, and programs necessary to help grow their businesses—including world-class sales, marketing, development, operational, and maintenance support throughout the entire customer lifecycle.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6,false)">Next Question ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(5,6,'-150%')">Next Question ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -183,14 +180,13 @@
 				<input type="radio" name="5" value="b" hidden>
 				<button id="5b" class="btn btn-primary btn_5 zoomable" onclick="select('5','b')">False</button>
 			</div>
-			<div class="hidden row" id="answer_5">
+			<div class="row" id="answer_5" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_5_response_wrong" hidden>You know your stuff! This IS true!</p>
 					<p class="intro" id="answer_5_response_right" hidden>No, sorry, it is true!</p>
-					<!-- <p class="intro">The answer is: true!</p> -->
 					<p>All of CenturyLink's Partner Incentives are stackable, meaning a Partner may be eligible for more than one payout if their opportunity qualifies for more than one Incentive. For full Incentive details, contact your Channel Manager or email Partners@centurylink.com.</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7,false)">Next ›</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(6,7,'-150%')">Next ›</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -206,38 +202,38 @@
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">Auto Pop Car Charger with Charge all Cable</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/1-prize-1.png"></div>
-					<div class="row"><button id="1-1" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="Auto_Pop_Car_Charger" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 				<div class="row mobile-divider"></div>
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">CenturyLink Prize Pack</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/1-prize-2.png"></div>
-					<div class="row"><button id="1-2" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="CenturyLink_Prize_Pack" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 				<div class="row mobile-divider"></div>
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">Wireless Car Mouse & Pad combo + Cougar 8 GB USB</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/1-prize-3.png"></div>
-					<div class="row"><button id="1-3" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="Wireless_Car_Mouse" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 			</div>
 			<div class="row" id="prize_level_2" hidden>
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">Boxanne Wireless Speaker and 12 oz. Hammered Beverage Tumbler</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/2-prize-1.png"></div>
-					<div class="row"><button id="2-1" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="Boxanne_Wireless_Speaker" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 				<div class="row mobile-divider"></div>
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">Anker PowerWave Charger and 12 oz. Hammered Beverage Tumbler</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/2-prize-2.png"></div>
-					<div class="row"><button id="2-2" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="Anker_PowerWave_Charger" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 				<div class="row mobile-divider"></div>
 				<div class="col-sm-4 prize-container">
 					<div class="row"><p class="prize-title">Atom Wireless Earbud & UL Listed Charging Station</p></div>
 					<div class="row"><img class="prize-image" src="assets/image/2-prize-3.png"></div>
-					<div class="row"><button id="2-3" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+					<div class="row"><button id="Atom_Wireless_Earbud" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 				</div>
 			</div>
 			<div class="row" id="prize_level_3" hidden>
@@ -245,19 +241,19 @@
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">Life in Motion Charging Padfolio</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-1.png"></div>
-						<div class="row"><button id="3-1" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="Life_in_Motion_Padfolio" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 					<div class="row mobile-divider"></div>
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">Gray or Mint Ivy Mini Printer</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-2.png"></div>
-						<div class="row"><button id="3-2" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="Ivy_Mini_Printer" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 					<div class="row mobile-divider"></div>
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">WiFi Remote Control Selfie Drone</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-3.png"></div>
-						<div class="row"><button id="3-3" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="WiFi_Selfie_Drone" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 				</div>
 				<div class="row divider"></div>
@@ -265,19 +261,19 @@
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">Yeti Day Tripper Lunch Cooler Bag</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-4.png"></div>
-						<div class="row"><button id="3-4" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="Yeti_Cooler_Bag" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 					<div class="row mobile-divider"></div>
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">RocketBook Everlast Executive + Beagle Scout Travel Companion</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-5.png"></div>
-						<div class="row"><button id="3-5" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="RocketBook_Everlast_Executive" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 					<div class="row mobile-divider"></div>
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">Life in Motion Charging Backpack</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-6.png"></div>
-						<div class="row"><button id="3-6" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="Life_in_Motion_Charging_Backpack" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 				</div>
 				<div class="row divider"></div>
@@ -286,7 +282,7 @@
 					<div class="col-sm-4 prize-container">
 						<div class="row"><p class="prize-title">Aftershokz Wireless Bone Conduction Headphones</p></div>
 						<div class="row"><img class="prize-image" src="assets/image/3-prize-7.png"></div>
-						<div class="row"><button id="3-7" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
+						<div class="row"><button id="Aftershokz_Wireless_Headphones" class="btn btn-primary zoomable prize-btn" onclick="setPrize(this.id)">Select</button></div>
 					</div>
 				</div>
 			</div>
@@ -306,7 +302,7 @@
 				<div class="row">
 					<div class="col col-sm-12">
 						<label>Prize selection:</label>
-						<input class="form-control" type="text" id="prize" name="prize" readonly style="background-color: white;" onclick="changeScreen(8,7,true)">
+						<input class="form-control" type="text" id="prize" name="prize" readonly style="background-color: white;" onclick="changeScreen(8,7,'150%')">
 					</div>
 				</div>
 				<div class="row">
@@ -375,7 +371,7 @@
 						<input class="form-control" type="email" name="email" placeholder="smith@company.com">
 					</div>
 				</div>
-				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9,false)">Submit</button>
+				<button class="btn btn-primary pull-right submit-btn zoomable" type="button" onclick="changeScreen(8,9,'-150%')">Submit</button>
 				<input type="hidden" id="drawing" name="drawing" value="0">
 			</form>
 			<div class="row fine-print border-top buffer-bottom buffer-top">
@@ -420,13 +416,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="hidden row" id="answer_6">
+			<div class="row" id="answer_6" hidden>
 				<div class="answer">
 					<p class="intro" id="answer_6_intro"><br></p>
 					<p class="intro">The answer is: c. 3,564,000,000!</p>
 					<p>At 8 inches in length, it would take over 3.5 billion red licorice candy ropes to equal 450,000 route miles of CenturyLink fiber!</p>
 				</div>
-				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10,false)">Finish</button>
+				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10,'-150%')">Finish</button>
 			</div>
 			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
@@ -438,24 +434,22 @@
 			<p id="delivery">Your prize will be mailed to the address you provided in 2 - 3 weeks.</p>
 			<p id="drawing_msg"></p>
 			<p>Please reach out to <a href="mailto: partners@centurylink.com" target="_blank">partners@centurylink.com</a> for more information on the CenturyLink Channel Partner Program, or visit <a href="https://www.centurylink.com/business/partner" target="_blank">www.centurylink.com/business/partner</a></p>
-			<!-- TODO close quiz action? -->
-			<button class="btn btn-primary pull-right zoomable" onclick="">Close Quiz</button>
-			<div class="row fine-print border-top buffer-bottom buffer-top">
+			<h3>Please close the quiz to navigate back to the conference.</h3>
+			<div class="row fine-print border-top buffer-bottom">
 				<span class="gray">© 2020 CenturyLink. All Rights Reserved. Third party marks are the property of their respective owners. </span><a href="rules.php" target="_blank">For complete rules, see www.ctlchannelpartnerquiz.com/rules</a>
 			</div>
 		</div>
-		<!-- footer -->
+		<!-- Footer -->
 		<a class="footer" href="mailto: partners@centurylink.com" target="_blank">
 			Want to learn more? Email us now
 		</a>
 	</div>
 
-	<!-- Begin JavaScript -->
+	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/script.js"></script>
-    <!-- End JavaScript -->
 
 </body>
 </html>

@@ -1,9 +1,4 @@
 var correct = 0;
-var prizes = [
-	["Auto Pop Car Charger", "CenturyLink Prize Pack", "Wireless Car Mouse"],
-	["Boxanne Wireless Speaker", "Anker PowerWave Charger", "Atom Wireless Earbud"],
-	["Life in Motion Padfolio", "Ivy Mini Printer", "WiFi Selfie Drone", "Yeti Cooler Bag", "RocketBook Everlast Executive", "Life in Motion Charging Backpack", "Aftershokz Wireless Headphones"]
-];
 
 $( document ).ready(function() {
 	// add states to select input
@@ -13,87 +8,72 @@ $( document ).ready(function() {
 		$("#state_desktop").append(new Option(states[i], states[i]));
 	}
 
+	// link desktop/mobile city/state/zip inputs
+	$("#city_desktop").change(function() {
+		$("#city_mobile").val($(this).val());
+	});
+	$("#city_mobile").change(function() {
+		$("#city_desktop").val($(this).val());
+	});
+	$("#state_desktop").change(function() {
+		$("#state_mobile").val($(this).val());
+	});
+	$("#state_mobile").change(function() {
+		$("#state_desktop").val($(this).val());
+	});
+	$("#zipcode_desktop").change(function() {
+		$("#zipcode_mobile").val($(this).val());
+	});
+	$("#zipcode_mobile").change(function() {
+		$("#zipcode_desktop").val($(this).val());
+	});
+
 	// submit form data to backend
 	$('#user_form').submit(function(e){
 	    e.preventDefault();
         $.ajax({
             type: "POST",
             url: "submit.php",
-            data: $('#user_form').serialize(),
-            success: function(result){
-            	// form successfully submitted
-            }
+            data: $('#user_form').serialize()
        });
-	});
-
-	// link desktop/mobile city/state/zip inputs
-	$("#city_desktop").change(function() {
-		$("#city_mobile").val($("#city_desktop").val());
-	});
-	$("#city_mobile").change(function() {
-		$("#city_desktop").val($("#city_mobile").val());
-	});
-	$("#state_desktop").change(function() {
-		$("#state_mobile").val($("#state_desktop").val());
-	});
-	$("#state_mobile").change(function() {
-		$("#state_desktop").val($("#state_mobile").val());
-	});
-	$("#zipcode_desktop").change(function() {
-		$("#zipcode_mobile").val($("#zipcode_desktop").val());
-	});
-	$("#zipcode_mobile").change(function() {
-		$("#zipcode_desktop").val($("#zipcode_mobile").val());
 	});
 });
 
-function setPrize(id) {
-	// set value to prize input
-	var level = parseInt(id.split("-")[0]);
-	var number = parseInt(id.split("-")[1]);
-	var prize = prizes[level-1][number-1];
-	$("#prize").val(prize);
+// set the prize input value on the form
+function setPrize(prize) {
+	$("#prize").val(prize.replace(/_/g, " "));
 	// go to next screen
-	changeScreen(7,8);
+	changeScreen(7,8,"-150%");
 }
 
 // shift the current view off screen, shift next view onto screen
-function changeScreen(current, next, back) {
-	// scroll to top of screen
-	window.scrollTo(0, 0);
+function changeScreen(current, next, shiftTo) {
 	// check for form submit
 	if (current == 8 && next != 7) {
-		// check form values
+		// check form values, return if errors
 		$("#user_form").validate();
 		if (!$("#user_form").valid()) {
 			return;
 		}
 	}
-	// if quiz complete w/ 0 correct, skip to bonus question
-	if (current == 6 && correct == 0) {
-		next += 2;
-	}
-	if (back) {
-		$("#screen_"+current).animate({ left: '150%' }, 750 );
-        $("#screen_"+next).animate({ left: '50%' }, 750 );
-	} else {
-		$("#screen_"+current).animate({ left: '-150%' }, 750 );
-        $("#screen_"+next).animate({ left: '50%' }, 750 ).show();
-	}
+	// scroll to top of screen
+	$("html, body").animate({scrollTop:0}, 100, function() {
+		// if quiz complete w/ 0 correct, skip ahead to bonus question
+		if (current == 6 && correct == 0) {
+			next += 2;
+		}
+		// shift screens
+		$("#screen_"+current).animate({ left: shiftTo }, 750 );
+	    $("#screen_"+next).animate({ left: '50%' }, 750 ).show();
+	});
 }
 
 // response button click
-function select(group, value) {
+function select(id, response) {
 	// select radio input
-	$('input[name="' + group+ '"]').val([value]);
-	submitAnswer(group);
-}
-
-// submit user response
-function submitAnswer(id) {
-	var answers = ['d', 'd', 'a', 'a', 'a', 'c'];
+	$('input[name="' + id+ '"]').val([response]);
 	// check user response
-	var response = $('input[name="'+id+'"]:checked').val();
+	var answers = ['d', 'd', 'a', 'a', 'a', 'c'];
 	var answer = answers[id-1];
 	if (response == answer && id != 6) { correct += 1; }
 	// reveal correct answer
@@ -108,7 +88,7 @@ function submitAnswer(id) {
 	// reveal answer
 	var unhide = response == answer ? "wrong" : "right";
 	$("#answer_"+id+"_response_"+unhide).show();
-	$("#answer_"+id).removeClass("hidden");
+	$("#answer_"+id).show();
 	// check for end of quiz
 	if (id == 5) {
 		$("#quiz_grade").html("You answered "+correct+" correctly!");
@@ -131,7 +111,7 @@ function submitAnswer(id) {
 				break;
 		}
 	}
-	// check for bonus
+	// check for bonus question
 	if (id == 6) {
 		// check answer and adjust drawing value
 		if (response == answer) {
@@ -142,16 +122,12 @@ function submitAnswer(id) {
 		// set drawing value on thank you page
 		var drawings = $("#drawing").val();
 		if (drawings > 0) {
-			var drawing_msg = drawings == 1 ? "You also earned 1 entry into the drawing!" : "You also earned 2 entries into the drawing!";
-			$("#drawing_msg").html(drawing_msg);
+			var entries = drawings == 1 ? "1 entry" : "2 entries";
+			$("#drawing_msg").html("You also earned "+entries+" into the drawing!");
 		}
 		// hide delivery message if 0 correct
 		if (correct == 0) {
 			$("#delivery").hide();
 		}
 	}
-}
-
-function close_window() {
-    close();
 }

@@ -20,7 +20,7 @@
 			<div class="col-xs-6 bar-3"></div>
 		</div>
 		<div class="rules">
-			<a href="#" onClick="javascript:window.open('','_self').close();">‹ Back to Quiz</a>
+			<a href="#" onclick="javascript:window.open('','_self').close();">‹ Back to Quiz</a>
 			<h2 class="rules-intro">CENTURYLINK PARTNER VIRTUAL EVENT SWEEPSTAKES OFFICIAL RULES</h2>
 			<p>
 				NO PURCHASE NECESSARY. VOID WHERE PROHIBITED. A PURCHASE WILL NOT INCREASE YOUR CHANCES OF WINNING. <br><br>

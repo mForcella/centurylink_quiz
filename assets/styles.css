@@ -15,11 +15,6 @@ body {
 		margin: 0;
 	}
 }
-@media screen and (max-width:360px) {
-	body {
-		/*background-size: auto 50%;*/
-	}
-}
 button {
 	border-radius: 0 !important;
 	background-color: #0D49B5 !important;
@@ -131,6 +126,7 @@ a, a:hover, a:focus {
 	text-align: center;
 	cursor: pointer;
 	transition: transform 0.5s;
+	color: white !important;
 }
 .footer:hover {
 	transform: scale(1.1);
@@ -188,13 +184,13 @@ a, a:hover, a:focus {
 	border-color: #777 !important;
 	color: #777 !important;
 }
+button.btn.correct, button.btn.incorrect {
+	cursor: default;
+}
 .answer {
 	background-color: #1a1a1a;
 	padding: 20px;
 	margin: 20px 0;
-}
-.hidden {
-	display: none;
 }
 .border-top {
 	border-top: 1px solid #46484D;
@@ -354,7 +350,7 @@ select:not([multiple]) {
 	margin-top: -35px;
 }
 
-/* Rules page */
+/* rules page */
 .rules {
 	width: 50%;
 	margin: 0 auto;
