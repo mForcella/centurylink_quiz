@@ -396,31 +396,32 @@
 				</div>
 			</div>
 			<div class="bonus-main">
-				<h3 class="headline">How many popular brand licorice candy ropes would it take end-to-end to match the CenturyLink fiber network?</h3>
+				<h3 class="headline">At an average pace, how many days would it take you to walk the CenturyLink fiber network (assuming it could be walked)?</h3>
 				<div class="bonus-buttons">
 					<div>
 						<input type="radio" name="6" value="a" hidden>
-						<button id="6a" class="btn btn-primary btn_6 zoomable" onclick="select('6','a')">A. 35,640,000</button>
+						<button id="6a" class="btn btn-primary btn_6 zoomable" onclick="select('6','a')">A. 1,000 days</button>
 					</div>
 					<div>
 						<input type="radio" name="6" value="b" hidden>
-						<button id="6b" class="btn btn-primary btn_6 zoomable" onclick="select('6','b')">B. 356,400,000</button>
+						<button id="6b" class="btn btn-primary btn_6 zoomable" onclick="select('6','b')">B. 2,500 days</button>
 					</div>
 					<div>
 						<input type="radio" name="6" value="c" hidden>
-						<button id="6c" class="btn btn-primary btn_6 zoomable" onclick="select('6','c')">C. 3,564,000,000</button>
+						<button id="6c" class="btn btn-primary btn_6 zoomable" onclick="select('6','c')">C. 3,650 days</button>
 					</div>
 					<div>
 						<input type="radio" name="6" value="d" hidden>
-						<button id="6d" class="btn btn-primary btn_6 zoomable" onclick="select('6','d')">D. 35,640,000,000</button>
+						<button id="6d" class="btn btn-primary btn_6 zoomable" onclick="select('6','d')">D. 6,250 days</button>
 					</div>
 				</div>
 			</div>
 			<div class="row" id="answer_6" hidden>
 				<div class="answer">
-					<p class="intro" id="answer_6_intro"><br></p>
-					<p class="intro">The answer is: c. 3,564,000,000!</p>
-					<p>At 8 inches in length, it would take over 3.5 billion red licorice candy ropes to equal 450,000 route miles of CenturyLink fiber!</p>
+					<p class="intro" id="answer_6_response_wrong" hidden>Yes, that’s right!</p>
+					<p class="intro" id="answer_6_response_right" hidden>Oh, no, that’s not correct.</p>
+					<p class="intro">The answer is: d. 6,250 days!</p>
+					<p>Walking at an average page of 20 minutes per mile, it would take 6,250 days to walk 450,000 miles!</p>
 				</div>
 				<button class="btn btn-primary pull-right zoomable" onclick="changeScreen(9,10,'-150%')">Finish</button>
 			</div>

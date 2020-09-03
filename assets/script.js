@@ -2,7 +2,7 @@ var correct = 0;
 
 $( document ).ready(function() {
 	// add states to select input
-	var states = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+	var states = ["AL","AK","AZ","AR","CA","CO","CT","DC","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
 	for (var i in states) {
 		$("#state_mobile").append(new Option(states[i], states[i]));
 		$("#state_desktop").append(new Option(states[i], states[i]));
@@ -97,6 +97,7 @@ function select(id, response) {
 		// enter into drawing if all questions are correct
 		if (correct == 5) {
 			$("#drawing").val(1);
+			alert("Congratulations! You’ve earned an entry into a drawing for a flat screen TV!");
 		}
 		// build prize page based on correct responses
 		switch (correct) {
@@ -118,6 +119,7 @@ function select(id, response) {
 		// check answer and adjust drawing value
 		if (response == answer) {
 			$("#drawing").val(parseInt($("#drawing").val())+1);
+			alert("Congratulations! You’ve earned an entry into a drawing for a flat screen TV!");
 		}
 		// submit form
 		$("#user_form").submit();
